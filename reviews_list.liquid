@@ -29,8 +29,11 @@
     <div class="reviews-item">
 
       <div class="review-header">
-        <div class="author"><i class="fa fa-user"></i> {{ review.author }}</div>
-        <div class="date"><i class="fa fa-calendar"></i> {{ review.created_at | date: "%d.%m.%Y %H:%M" }}</div>
+        <div class="author">
+          <i class="ui-icon-user"></i> {{ review.author }}</div>
+        <div class="date">
+          <i class="ui-icon-calendar"></i> {{ review.created_at | date: "%d.%m.%Y %H:%M" }}
+        </div>
         <div class="star-rating-wrapper">
           <div class="star-rating">
             {% assign r = 5 %}

@@ -9,5 +9,8 @@
     "common": false,
     "liquid": true
   },
-  "dependencies": {}
+  "dependencies": {
+    "ui-icons": "https://github.com/insales-components/ui-icons",
+    "ui-stars": "https://github.com/insales-components/ui-stars"
+  }
 }
