@@ -26,15 +26,15 @@
 <div class="reviews-items-wrap is-{{ reviews_mod }}">
 
   {% for review in reviews_array limit: reviews_limit %}
-    <div class="reviews-item">
+    <div class="review">
 
       <div class="review-header">
-        <div class="author">
-          <i class="ui-icon-user"></i> {{ review.author }}</div>
-        <div class="date">
-          <i class="ui-icon-calendar"></i> {{ review.created_at | date: "%d.%m.%Y %H:%M" }}
+        <div class="review-author">
+          {{ review.author }}</div>
+        <div class="review-date">
+          {{ review.created_at | date: "%d.%m.%Y %H:%M" }}
         </div>
-        <div class="star-rating-wrapper">
+        <div class="star-rating-wrapper review-rating">
           <div class="star-rating">
             {% assign r = 5 %}
             {% for i in (1..5) %}
@@ -50,6 +50,14 @@
         </p>
       </div>
       <div class="review-footer">
+        {% if review.replied? %}
+         <div class="review-manager_reply">
+           {{ review.manager_reply }}
+         </div>
+         <div class="review-replied_at">
+           {{ review.replied_at | date: "%d.%m.%Y %H:%M" }}
+         </div>
+        {% endif %}
       </div>
     </div><!-- /.reviews-item -->
   {% endfor %}
